@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { IUserDTO } from "../../../repositories/iUsersRepository";
 import { CreateUserUseCase } from "./CreateUserUseCase";
+import { IUserDTO } from "../../../repositories/IUsersRepository";
 
 export class CreateUserController {
   constructor(private createUserUseCase: CreateUserUseCase) {}

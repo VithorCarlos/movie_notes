@@ -1,9 +1,7 @@
 import { User } from "../../../model/User";
-import {
-  IUserDTO,
-  IUsersRepository,
-} from "../../../repositories/iUsersRepository";
+
 import bcrypt from "bcrypt";
+import { IUserDTO, IUsersRepository } from "../../../repositories/IUsersRepository";
 
 export class CreateUserUseCase {
   constructor(private usersRepository: IUsersRepository) {}

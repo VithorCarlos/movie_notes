@@ -3,8 +3,6 @@
     "target": "ES2022",                                
     "module": "CommonJS",                                
     "esModuleInterop": true,                           
-    "forceConsistentCasingInFileNames": true,    
-    "allowSyntheticDefaultImports": true,        
     "strict": false,                                      
     "skipLibCheck": true,
     "allowJs": true                        

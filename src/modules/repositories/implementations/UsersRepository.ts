@@ -1,7 +1,7 @@
 import { User } from "../../model/User";
 
 import knex from "../../../database/knex";
-import { IUserDTO, IUsersRepository } from "../iUsersRepository";
+import { IUserDTO, IUsersRepository } from "../../repositories/IUsersRepository";
 
 export class UsersRepository implements IUsersRepository {
   private static INSTANCE: UsersRepository;
@@ -50,5 +50,7 @@ export class UsersRepository implements IUsersRepository {
     return userUpdated;
   }
 
-  async delete(user_id: string): Promise<void> {}
+  async delete(user_id: string): Promise<void> {
+    await knex("users").where({id: user_id}).delete();
+  }
 }
