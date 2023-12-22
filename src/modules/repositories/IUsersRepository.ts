@@ -1,14 +1,5 @@
+import { IUserDTO } from "../dtos/user.dto";
 import { User } from "../model/User";
-
-interface IUserDTO {
-  id?:string;
-  name: string;
-  email: string;
-  password: string;
-  old_password?: string;
-  avatar?: string;
-  updated_at?: Date;
-}
 
 interface IUsersRepository {
   create(user: IUserDTO): Promise<User>;
@@ -19,4 +10,4 @@ interface IUsersRepository {
   delete(user_id: string): Promise<void>;
 }
 
-export { IUserDTO, IUsersRepository };
+export { IUsersRepository };

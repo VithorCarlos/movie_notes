@@ -1,7 +1,8 @@
 import { User } from "../../model/User";
 
 import knex from "../../../database/knex";
-import { IUserDTO, IUsersRepository } from "../../repositories/IUsersRepository";
+import { IUsersRepository } from "../../repositories/IUsersRepository";
+import { IUserDTO } from "../../dtos/user.dto";
 
 export class UsersRepository implements IUsersRepository {
   private static INSTANCE: UsersRepository;
@@ -31,9 +32,11 @@ export class UsersRepository implements IUsersRepository {
   }
 
   async findById(id: string): Promise<User> {
-    const [findById] = await knex("users").where({ id });
+    if (id) {
+      const [findById] = await knex("users").where({ id });
 
-    return findById;
+      return findById;
+    }
   }
 
   async list(): Promise<User[]> {
@@ -51,6 +54,6 @@ export class UsersRepository implements IUsersRepository {
   }
 
   async delete(user_id: string): Promise<void> {
-    await knex("users").where({id: user_id}).delete();
+    await knex("users").where({ id: user_id }).delete();
   }
 }

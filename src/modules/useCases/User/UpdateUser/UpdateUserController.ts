@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { UpdateUserUseCase } from "./UpdateUserUseCase";
-import { IUserDTO } from "../../../repositories/IUsersRepository";
+import { IUserDTO } from "../../../dtos/user.dto";
 
 export class UpdateUserController {
   constructor(private updateUserUseCase: UpdateUserUseCase) {}
